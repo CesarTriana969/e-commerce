@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don Barredora</title>
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!--==================== LOADER ====================-->
+  <div class="load" id="load">
+    <img src="assets/img/meteoro.png" viewBox="0 0 48.92 56.48" class="load__gif">
+    <title>Logo</title>
+    <g>
+      <g>
+        <path
+          d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z">
+        </path>
+        <path
+          d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+        </path>
+      </g>
+    </g>
+    </svg>
+  </div>
+
+  <!--==================== HEADER ====================-->
+
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <img src="assets/img/meteoro.png" viewBox="0 0 48.92 56.48" class="nav__logo-icon">
+        <title>DonBarredora Logo</title>
+        <g>
+          <g>
+            <!-- <path d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z"></path> -->
+            <path
+              d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+            </path>
+          </g>
+        </g>
+        </svg> Don Barredora
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Inicio</a>
+          </li>
+          <li class="nav__item">
+            <a href="#products" class="nav__link">Productos</a>
+          </li>
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+          <i class='bx bx-x'></i>
+        </div>
+      </div>
+
+      <div class="nav__btns">
+        <!-- Theme change button -->
+        <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+        <div class="nav__shop" id="cart-shop">
+          <i class='bx bx-shopping-bag'></i>
+          <span id="cart-count" class="count"></span>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class='bx bx-grid-alt'></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--==================== CART ====================-->
+  <div class="cart" id="cart">
+    <i class='bx bx-x cart__close' id="cart-close"></i>
+
+    <h2 class="cart__title-center"><i class='bx bx-cart'></i> Carrito</h2>
+
+    <div id="cart__container" class="cart__container">
+
+      <article class="cart__card">
+        <div class="cart__box">
+          <img src="assets/img/GTX 1650 4GBS OC - GIGABYTE.png" alt="Gráfica" class="cart__img">
+        </div>
+
+        <div class="cart__details">
+          <h3 class="cart__title">GTX 1650 4gbs Oc - Gigabyte <span class="cart__price">$268,41</span></h3>
+
+          <div class="cart__amount">
+            <div class="cart__amount-content">
+              <span class="cart__amount-box removeToCart" data-id="1">
+                <i class="bx bx-minus"></i>
+              </span>
+
+              <span class="cart__amount-number">1</span>
+
+              <span class="cart__amount-box addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </span>
+            </div>
+
+            <i class="bx bx-trash-alt cart__amount-trash deleteToCart" data-id="1"></i>
+          </div>
+
+          <span class="cart__subtotal">
+            <span class="cart__stock">Quedan 10 unidades</span>
+            <span class="cart__subtotal-price">$268,41</span>
+          </span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cart__prices">
+      <span class="cart__prices-item"><span id="items-count"></span> Unidades</span>
+      <span class="cart__prices-total" id="cart-total"></span>
+    </div>
+
+    <div id="action-buttons" class="cart__checkout">
+      <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i> Comprar</button>
+      <button class="button cart__btn" id="cart-empty" disabled><i class='bx bx-cart-alt'></i> Limpiar</button>
+    </div>
+
+  </div>
+
+  <!--==================== MAIN ====================-->
+  <main class="main">
+    <!--==================== HOME ====================-->
+    <section class="home" id="home">
+      <div class="home__container container grid">
+        <div class="home__img-bg">
+          <img src="assets/img/PC - RYZEN 7 5800X + RTX 3090 - EXIBIHICION.png" alt="PC_GAMER" class="home__img">
+        </div>
+
+        <div class="home__data">
+          <h1 class="home__title">PC / RYZEN 7 5800X + RTX 3090</h1>
+          <p class="home__description">
+          <ul>
+            <li>Procesador AMD RYZEN 7 5800X / 8 Nucleos - 16 Hilos
+            </li>
+            <li>Board Chipset X570 AORUS GAMING WIFI</li>
+            <li>32gb en Memoria Ram DDR4 3200MHZ RGB TRIDENT Z RGB</li>
+            <li>T. Video NVIDIA RTX 3090 24GBS ROG STRIX RGB</li>
+            <li>1 Tera en Disco de Estado Solido M.2 AORUS + 4 TERAS HDD</li>
+            <li>Chasis Thermaltake VIEW 51 WHITE / Edition</li>
+            <li>Fuente Real 850W CORE REACTOR XPG</li>
+            <li>KIT de 7 Fans ARGB PURE Thermaltake White</li>
+            <li>Refrigeracion Liquida 280 AORUS WaterForce</li>
+            <li>CABLES ARGB - XPG KIT Duo para GRAFICA Y BOARD</li>
+          </ul>
+          Este producto se entrega ensamblado y configurado con windows 10 Pro.
+          </p>
+          <br>
+          <span class="home__price">$3006,64</span>
+
+          <div class="home__btns">
+            <a href="#" class="button button--transparent button--small">
+              Descubrir
+            </a>
+
+            <button class="button home__button" data-id="1">AÑADIR AL CARRITO</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== VIDEO ====================-->
+
+    <section class="video container">
+      <video poster="img/poster.png" controls autoplay muted class="video">
+        <source src="assets/video/call of duty.mp4" type="video/mp4">
+        <source src="assets/video/call of duty.mp4" type="video/ogg">
+        <p>Tu navegador no soporta el elemento video de HTML5</p>
+      </video>
+    </section>
+
+    <!--==================== PRODUCTS ====================-->
+    <section class="products" id="products">
+      <div class="products__container container">
+        <ul class="products__filters">
+          <li class="products__item products__line" data-filter="all">
+            <h3 class="products__title">
+              Mostrar todo
+            </h3>
+            <span class="products__stock">
+              Mostrar todos los productos
+            </span>
+          </li>
+
+          <li class="products__item products__line active-product" data-filter=".">
+            <h3 class="products__title">
+              Gráficas
+            </h3>
+            <span class="products__stock">
+              5 productos
+            </span>
+          </li>
+
+          <li class="products__item products__line" data-filter=".">
+            <h3 class="products__title">
+              PC Gamer
+            </h3>
+            <span class="products__stock">
+              5 productos
+            </span>
+          </li>
+
+          <li class="products__item" data-filter=".pantallas">
+            <h3 class="products__title">
+              Pantallas
+            </h3>
+            <span class="products__stock">
+              3 productos
+            </span>
+          </li>
+
+          <li class="products__item" data-filter=".sillas">
+            <h3 class="products__title">
+              Sillas
+            </h3>
+            <span class="products__stock">
+              4 productos
+            </span>
+          </li>
+
+        </ul>
+
+        <!--==================== T. Gráficas ====================-->
+
+        <div class="products__content grid" id="products__content">
+
+          <article class="products__card gráficas">
+            <div class="products__shape">
+              <img src="assets/img/GIGABYTE RTX 3060 VISION WHITE 3 FANS 12G - GIGABYTE.png" alt="Gráfica"
+                class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">RTX 3060 Vision White 3 Fans 12G - GIGABYTE</h2>
+              <div class="">
+                <h3 class="products__price">$532,82</h3>
+                <span class="products__quantity">Quedan solo 15 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card">
+            <div class="products__shape">
+              <img src="assets/img/RTX 3090 TI GAMING X TRIO 24GBS - MSI.png" alt="Gráfica" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">RTX 3090 TI Gaming X Trio 24GBS - MSI</h2>
+              <div class="">
+                <h3 class="products__price">$1722,66</h3>
+                <span class="products__quantity">Quedan solo 20 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card">
+            <div class="products__shape">
+              <img src="assets/img/RTX 4090 TUF GAMING OC 24GBS - ASUS.png" alt="Gráfica" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">RTX 4090 TUF Gaming OC 24GBS - ASUS</h2>
+              <div class="">
+                <h3 class="products__price">$2251,47</h3>
+                <span class="products__quantity">Quedan solo 3 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card">
+            <div class="products__shape">
+              <img src="assets/img/RTX 3070 TI ROG STRIX GAMING WHITE 8G - ASUS.png" alt="Gráfica"
+                class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">RTX 3070 TI Rog Strix Gaming White 8G - ASUS</h2>
+              <div class="">
+                <h3 class="products__price">$769,19</h3>
+                <span class="products__quantity">Quedan solo 11 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <!--==================== PC GAMER ====================-->
+
+          <article class="products__card pc_gamers">
+            <div class="products__shape">
+              <img src="assets/img/PC - RYZEN 5 5600G + RX VEGA.png" alt="pc_gamer" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">PC / RYZEN 5 5600G + RX VEGA</h2>
+              <div class="">
+                <h3 class="products__price">$643,19</h3>
+                <span class="products__quantity">Quedan solo 5 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card pc_gamers">
+            <div class="products__shape">
+              <img src="assets/img/PC - CORE I5 12400 + RTX 3050.png" alt="PC_GAMER" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">PC / CORE I5 12400 + RTX 3050</h2>
+              <div class="">
+                <h3 class="products__price">$1065,64</h3>
+                <span class="products__quantity">Quedan solo 7 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card pc_gamers">
+            <div class="products__shape">
+              <img src="assets/img/PC - CORE I5 12600K + RTX 3060 TI.png" alt="PC_GAMER" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">PC / CORE I5 12600K + RTX 3060 TI</h2>
+              <div class="">
+                <h3 class="products__price">$1590,85</h3>
+                <span class="products__quantity">Quedan solo 9 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card">
+            <div class="products__shape">
+              <img src="assets/img/PC - RYZEN 5 7600X + RTX 3070 TI.png" alt="PC_GAMER" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">PC / RYZEN 5 7600X + RTX 3070 TI</h2>
+              <div class="">
+                <h3 class="products__price">$2397,70</h3>
+                <span class="products__quantity">Quedan solo 20 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <!--==================== PANTALLAS ====================-->
+
+          <article class="products__card">
+            <div class="products__shape">
+              <img src="assets/img/SAMSUNG 49 SUPER CURVO ULTRAWIDE (240HZ-1MS-GSYNC).png" alt="Pantalla"
+                class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">SAMSUNG 49" Super Curvo Ultrawide (240HZ-1MS-GSYNC)</h2>
+              <div class="">
+                <h3 class="products__price">$1330,05</h3>
+                <span class="products__quantity">Quedan solo 15 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card">
+            <div class="products__shape">
+              <img src="assets/img/AOC 32 GAMING CURVO (165HZ-1MS).png" alt="Pantalla" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">AOC 32" Gaming Curvo (165HZ-1MS)</h2>
+              <div class="">
+                <h3 class="products__price">$432,37</h3>
+                <span class="products__quantity">Quedan solo 3 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card">
+            <div class="products__shape">
+              <img src="assets/img/ASUS 32 2K IPS ProART DISEÑO (75HZ-5MS).png" alt="Pantalla" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">ASUS 32" 2K IPS ProART Diseño (75HZ-5MS)</h2>
+              <div class="">
+                <h3 class="products__price">$616,95</h3>
+                <span class="products__quantity">Quedan solo 21 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <!--==================== Sillas ====================-->
+
+          <article class="products__card sillas">
+            <div class="products__shape">
+              <img src="assets/img/SILLA MOLTEN RED BLACK - GEAR.png" alt="silla" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">Silla Molten Red Black - GEAR</h2>
+              <div class="">
+                <h3 class="products__price">$178,28</h3>
+                <span class="products__quantity">Quedan solo 10 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card sillas">
+            <div class="products__shape">
+              <img src="assets/img/SILLA T1 RACE BLACK & RED - CORSAIR.png" alt="silla" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">Silla T1 Race Black & Red - CORSAIR</h2>
+              <div class="">
+                <h3 class="products__price">$338,52</h3>
+                <span class="products__quantity">Quedan solo 11 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card sillas">
+            <div class="products__shape">
+              <img src="assets/img/SILLA T1 RACE BLACK & WHITE - CORSAIR.png" alt="silla" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">Silla T1 Race Black & White - CORSAIR</h2>
+              <div class="">
+                <h3 class="products__price">$338,52</h3>
+                <span class="products__quantity">Quedan solo 11 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="products__card sillas">
+            <div class="products__shape">
+              <img src="assets/img/SILLA T1 RACE BLACK - CORSAIR.png" alt="silla" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">Silla T1 Race Black - CORSAIR</h2>
+              <div class="">
+                <h3 class="products__price">$338,52</h3>
+                <span class="products__quantity">Quedan solo 11 unidades</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content">
+        <h3 class="footer__title">Encuentranos</h3>
+
+        <ul class="footer__list">
+          <li>Palmira - Colombia</li>
+        </ul>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">Nosotros</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Cultura</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Trabaja con nosotros</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Nuestro compromiso</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Términos y Políticas</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Política de datos personales</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Aviso de privacidad</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Términos y condiciones</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Cambios y devoluciones</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Envíos</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Garantía</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Antójate</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Gráficas</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">PC Gamer</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Pantallas</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Sillas</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Síguenos</h3>
+
+        <ul class="footer__social">
+          <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-facebook'></i>
+          </a>
+
+          <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-twitter'></i>
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-instagram'></i>
+          </a>
+        </ul>
+      </div>
+    </div>
+
+    <span class="footer__copy">&copy; Don Barredora. All rights reserved.</span>
+  </footer>
+
+  <!--=============== SCROLL UP ===============-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+  </a>
+
+  <!--=============== MIXITUP FILTER ===============-->
+  <script src="assets/js/helpers/mixitup.min.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="assets/js/main.js" type="module"></script>
+  <script src="assets/js/cart.js"></script>
+</body>
+
+</html>
